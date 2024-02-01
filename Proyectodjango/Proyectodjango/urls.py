@@ -1,7 +1,6 @@
 from django.contrib import admin
-from django.urls import path
-from Proyectodjango.views import Saludo
+from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Saludo/',Saludo),
+    path('Appreciclaje/',include('appreciclaje.urls')),
 ]

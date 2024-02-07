@@ -383,9 +383,6 @@ select:disabled {
 button,
 [type=button],
 [type=reset],
-[type=submit] {
-  -webkit-appearance: button;
-}
 button:not(:disabled),
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
@@ -442,7 +439,6 @@ legend + * {
 
 [type=search] {
   outline-offset: -2px;
-  -webkit-appearance: textfield;
 }
 
 /* rtl:raw:
@@ -463,7 +459,6 @@ legend + * {
 
 ::file-selector-button {
   font: inherit;
-  -webkit-appearance: button;
 }
 
 output {
@@ -11041,6 +11036,15 @@ html {
   color: #fff;
 }
 
-.copyright {
-  background-color: #1a252f;
+body {
+  margin-top: 20px; /* Ajusta el valor según el espacio que desees entre el header y el body */
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }

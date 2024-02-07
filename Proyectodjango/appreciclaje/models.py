@@ -6,6 +6,8 @@ class Cliente(models.Model):
     DNI=models.IntegerField()
     telefono=models.IntegerField()
     email=models.EmailField()
+    usuario=models.CharField(max_length=100)
+    password=models.CharField(max_length=100)
 
 class Administrador(models.Model):
     nombre=models.CharField(max_length=100)

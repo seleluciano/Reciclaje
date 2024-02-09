@@ -25,7 +25,7 @@
         <section class="masthead bg-primary text-white text-center" id="inicio">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="../static/assets/img/avataaars.svg" alt="..." />
+                <img class="C" src="../static/assets/img/logo.jpg" alt="..." />
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">RECICLAJE</h1>
                 <!-- Icon Divider-->
@@ -34,53 +34,40 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!-- Masthead Subheading-->
-                
             </div>
         </section>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="materiales">
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="concientizacion">
             <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">MATERIALES</h2>
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">CONCIENTIZACION</h2>
                 <!-- Icon Divider-->
-                <div class="divider-custom">
+                <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!-- inicio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- inicio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="../static/assets/img/portfolio/cabin.png" alt="..." />
-                        </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 me-auto">
+                        <h2>¿Que es?</h2>
+                        <p class="lead">El reciclaje es un proceso cuyo objetivo es convertir residuos​ en nuevos productos o en materia prima para su posterior utilización</p>
                     </div>
-                    <!-- inicio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="../static/assets/img/portfolio/cake.png" alt="..." />
-                        </div>
+                    <div class="col-lg-4 me-auto">
+                        <h2>¿Cual es su importancia?</h2>
+                        <p class="lead">Reciclando evitas que los productos y materiales se conviertan en residuos, transformándolos en otros completamente nuevos, alargando su vida útil y ayudando a la preservación de los recursos naturales del planeta</p>
                     </div>
-                    <!-- inicio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="../static/assets/img/portfolio/circus.png" alt="..." />
-                        </div>
-                    </div>
+                </div>
+                
+                <!-- About Section Button-->
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-light" href="{% url "concientizacion" %}">
+                         Conoce un poco mas
+                    </a>
                 </div>
             </div>
         </section>
+        
   </body>
 </html>
 {% endblock  %}

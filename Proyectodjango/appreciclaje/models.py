@@ -15,13 +15,17 @@ class Administrador(models.Model):
     email=models.EmailField()
 
 class Objeto(models.Model):
-    Plastico = 1
-    Metal = 2
+    Baterias = 1
+    Organico= 2
     Papel = 3
+    Plastico= 4
+    Vidrio= 5
     TipodeChoice = [
+        (Baterias, 'Baterias'),
+        (Organico, 'Organico'),
+        (Papel, 'Papel'),
         (Plastico, 'Plastico'),
-        (Metal, 'Metal'),
-        (Papel, 'Papel')
+        (Vidrio, 'Vidrio')
     ]
     nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=255)  

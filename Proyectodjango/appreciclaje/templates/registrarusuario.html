@@ -22,8 +22,17 @@
 <body id="page-top">
     <section class="page-section">
         <div class="container">
-     <form action="/Registrarusuario/" method="POST" class="formulario">
-     <h2 >REGISTRAR NUEVO USUARIO</h2>
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">REGISTRAR SESION</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+        <div class="container">
+     <form action="/Appreciclaje/registrarusuario/" method="POST" class="formulario">
+     
     {% csrf_token %} <!--Token de validacion-->
     <p>Nombre: <input type="text" name="Nombre"></p>
     <p>Apellido: <input type="text" name="Apellido"></p>

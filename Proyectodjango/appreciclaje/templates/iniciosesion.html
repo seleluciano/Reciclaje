@@ -22,10 +22,17 @@
 </head>
 <body id="page-top">
     <section class="page-section">
-        
-    <form action="/Iniciosesion/" method="POST" class=formulario>
-        <h2>INICIAR SESION</h2>
-        {% csrf_token %}
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">INICIAR SESION</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>   
+    <form action="/Appreciclaje/iniciosesion/"method="POST" class=formulario>
+         {% csrf_token %}
         <p>Usuario: <input type="text" name="Usuario"></p>
         <p>Contraseña: <input type="password" name="Contraseña"></p>
         <input type="submit" name="Enviar">

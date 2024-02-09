@@ -23,13 +23,3 @@
 <h3>OBJETO</h3>
 <p>Seria el material a reciclar para poder ayudar a los CLientes en el reciclaje</p>
 <a href="https://github.com/seleluciano/Reciclaje/blob/main/Proyectodjango/appreciclaje/models.py">Ingrese aqui para ver las propiedades de cada modelo</a>
-
-
-<style>
-    a{
-        color:white
-    }
-    a:hover{
-        color:RGB(36, 113, 163 ) 
-    }
-</style>

@@ -20,4 +20,4 @@
 <p>Es el usuario que podra navegar por la base de datos y ademas podra modificar la base de datos creando, modificando o eliminando tablas </p>
 <h3>OBJETO</h3>
 <p>Seria el material a reciclar para poder ayudar a los CLientes en el reciclaje</p>
-<a src="./Proyectodjango/appreciclaje/models.py">Aca estan todos los modelos con sus propiedades</a>
+<a href="https://github.com/seleluciano/Reciclaje/blob/main/Proyectodjango/appreciclaje/models.py">Aca estan todos los modelos con sus propiedades</a>

@@ -31,13 +31,18 @@
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                 <div class="divider-custom-line"></div>
             </div>   
-    <form action="/Appreciclaje/iniciosesion/"method="POST" class=formulario>
+            
+    <form action="/Appreciclaje/iniciosesion/" method="POST" class=formulario>
          {% csrf_token %}
-        <p>Usuario: <input type="text" name="Usuario"></p>
-        <p>Contraseña: <input type="password" name="Contraseña"></p>
-        <input type="submit" name="Enviar">
+         {{ form.as_p }}
+        <button type="submit">Enviar</button>
         <p>¿No estás registrado? Regístrate <a href="{% url 'registrarusuario' %}">aquí</a></p>
-    </form>
+        <p>¿Sos administrador? Ingresa <a href="{% url 'admin:index' %}">aquí</a></p>
+        </form>
+        {% if mensaje %}
+        <p class="mensaje">{{ mensaje }}</p>
+        {% endif %}
+</section>
 </body>
 </html>
 {% endblock %}

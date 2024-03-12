@@ -11107,3 +11107,46 @@ body {
   text-align: center;
   font-family:cursive;
 }
+.crud{
+  text-decoration: none;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 80% 60%;
+}
+.crud-item{
+  background-color: rgb(141,198,212);
+  border: 2px solid black;
+  margin: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; 
+}
+.crud-item h3,a {
+  margin-top: 0;
+  color: #000;
+}
+
+.crud-item img {
+  width: 80%;
+  height: 80%;
+  transition-duration: 3s;
+  transition-timing-function: ease-out;
+}
+
+.crud-item img:hover {
+  width: 85%;
+  transform: widht 3s;
+}
+
+.crud-item a {
+  transition-duration: 2s;
+  transition-timing-function: ease;
+}
+
+.crud-item a:hover {
+  transform: scale(1.2, 1.2);
+}

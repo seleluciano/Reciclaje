@@ -31,9 +31,15 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url "inicio" %}">INICIO</a></li>
                         
                          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url "concientizacion" %}">CONCIENTIZACION</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url "contacto" %}">CONTACTO</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url "contacto" %}">CONTACTO</a></li>                        
+                        {%if not request.user.is_authenticated %}
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url "iniciosesion" %}">INICIAR SESION</a></li>
+                        {%else%}
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url "editarperfil" %}">PERFIL: {{usuario}}</a></li>
+                        
+                        {% endif %}
                     </ul>
+
                 </div>
             </div>
         </nav>

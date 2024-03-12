@@ -1,0 +1,18 @@
+
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<body id="page-top">
+    <section class="page-section"> 
+        <form method="POST" class="formulario">
+            {% csrf_token %}
+            {{ form.as_p }}
+           <input type="submit" value="Crear" />
+        </form>
+    
+    </section>
+</body>
+</html>
+{% endblock %}
+

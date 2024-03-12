@@ -1,0 +1,28 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<body id="page-top">
+ <section class="page-section"> 
+    <h2>OBJETOS</h2>
+    <div class="crud">
+        {% for objeto in object_list %}
+        <div class="crud-item">
+            <h3>Nombre: <i>{{ objeto.nombre }}</i></h3>
+            <img src="{% static 'ruta/de/la/imagen.jpg' %}" alt="Imagen" />
+            <p>
+                <a href="{% url 'Detail' objeto.id %}">Ver</a>
+                <a href="{% url 'Edit' objeto.id %}">Editar</a>
+                <a href="{% url 'Delete' objeto.id %}">Eliminar</a>
+            </p>
+        </div>
+        {% if not forloop.last %}
+        <hr /> 
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>
+</body>
+</html>
+{% endblock %}

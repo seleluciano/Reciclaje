@@ -1,15 +1,19 @@
 from django.shortcuts import render
 from appreciclaje.models import *
-from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import UserRegisterForm
-#from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
+from django.views.generic.edit import UpdateView, DeleteView,CreateView
+from django.views.generic.detail import DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
+@login_required
 def Inicio(request):
     return render(request, "index.html")
 
-
+@login_required
 def Concientizacion(request):
     return render(request, "concientizacion.html")
 
@@ -52,21 +56,59 @@ def Registrarusuario(request):
     return render(request, "registrarusuario.html", {'form': form})
 
 
-def Cerrarsesion(request):
-    return render(request, "cerrarsesion.html")
-
-
+@login_required
 def Contacto(request):
     return render(request, "contacto.html")
 
-def Buscarobjetos(request):
-    if request.method == "POST":
-        objeto = request.POST.get('objeto', '')
-        resultados = Objeto.objects.filter(
-            descripcion__icontains=objeto) | Objeto.objects.filter(tipo__icontains=objeto)
-        if resultados:
-            return render(request, "concientizacion.html", {"Resultados": resultados})
-        else:
-            return render(request, "concientizacion.html", {"buscarporobjetos": "No se encontraron objetos"})
+
+@login_required
+def Editarperfil(request):
+
+    usuario = request.user
+
+    if request.method == 'POST':
+
+        miFormulario = UserRegisterForm(request.POST)
+
+        if miFormulario.is_valid():
+
+            informacion = miFormulario.cleaned_data
+
+            usuario.email = informacion['email']
+            usuario.password1 = informacion['password1']
+            usuario.password2 = informacion['password2']
+            usuario.last_name = informacion['last_name']
+            usuario.first_name = informacion['first_name']
+
+            usuario.save()
+
+            return render(request, "perfil.html")
+
     else:
-        return HttpResponse("No se pudo realizar la búsqueda")
+
+        miFormulario = UserRegisterForm(initial={'email': usuario.email})
+
+    return render(request, "perfil.html", {"miFormulario": miFormulario, "usuario": usuario})
+
+
+class Listarobjeto(LoginRequiredMixin,ListView):
+    model=Objeto
+    template_name="objeto_list.html"
+    
+
+class Crearobjeto(LoginRequiredMixin,CreateView):
+    model=Objeto
+    fields=['nombre','descripcion','tipo']
+    template_name="objeto_form.html"  
+
+class Modificarobjeto(LoginRequiredMixin,UpdateView):
+    model=Objeto
+    fields=['nombre','descripcion','tipo']
+    template_name="objeto_form.html"
+
+class Eliminarobjeto(LoginRequiredMixin,DeleteView):
+    model=Objeto
+    template_name="objeto_confirm_delete.html"
+class Detalleobjeto(LoginRequiredMixin,DetailView):
+   model=Objeto
+   template_name="objeto_detalle.html"

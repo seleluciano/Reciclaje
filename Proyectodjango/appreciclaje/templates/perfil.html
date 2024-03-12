@@ -1,0 +1,36 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<!DOCTYPE html>
+<html lang="en">
+
+<body id="page-top">
+    <section class="page-section">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2
+              class="page-section-heading text-center text-uppercase text-secondary mb-0"
+            >
+              EDITAR PERFIL
+            </h2>
+            <div class="divider-custom">
+             
+        <form action="/Appreciclaje/editarperfil/" method="POST" class=formulario>
+          {% csrf_token %}
+                
+            <table>
+    
+                {{ miFormulario.as_table }}
+    
+            </table>
+    
+            <input type="submit", value="Modificar">
+    
+        </form>     
+
+</section>
+<script>
+</body>
+</html>
+{% endblock %}

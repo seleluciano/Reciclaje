@@ -1,0 +1,14 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<body id="page-top">
+ <section class="page-section"> 
+    <h3>OBJETO</h3>
+    <p>Nombre: <i>{{objeto.nombre}}</i> </p>
+    <p>Descripcion: <i>{{objeto.descripcion}}</i> </p> 
+    <p>Tipo: <i>{{objeto.tipo}}</i> </p>  
+</section>
+</body>
+</html>
+{% endblock %}

@@ -5,6 +5,7 @@ urlpatterns = [
     path('concientizacion/',views.Concientizacion,name="concientizacion"),
     path('contacto/',views.Contacto,name="contacto"),
     path('iniciosesion/',views.Iniciosesion,name="iniciosesion"),
+    path('logout/',views.Logout,name="cerrarsesion"),
     path('registrarusuario/',views.Registrarusuario,name="registrarusuario"),
     path('editarperfil/',views.Editarperfil,name="editarperfil"),
     path('nuevo/', views.Crearobjeto.as_view(), name="New"),

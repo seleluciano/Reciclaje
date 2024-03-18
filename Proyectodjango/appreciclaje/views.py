@@ -17,6 +17,10 @@ def Inicio(request):
 def Concientizacion(request):
     return render(request, "concientizacion.html")
 
+@login_required
+def Logout(request):
+    return render(request, "logout.html")
+
 
 def Iniciosesion(request):
     if request.method == 'POST':
@@ -99,16 +103,18 @@ class Listarobjeto(LoginRequiredMixin,ListView):
 class Crearobjeto(LoginRequiredMixin,CreateView):
     model=Objeto
     fields=['nombre','descripcion','tipo']
+    success_url = '/Appreciclaje/objeto/list' 
     template_name="objeto_form.html"  
 
 class Modificarobjeto(LoginRequiredMixin,UpdateView):
     model=Objeto
     fields=['nombre','descripcion','tipo']
+    success_url = '/Appreciclaje/objeto/list' 
     template_name="objeto_form.html"
-
 class Eliminarobjeto(LoginRequiredMixin,DeleteView):
     model=Objeto
     template_name="objeto_confirm_delete.html"
+    success_url = '/Appreciclaje/objeto/list' 
 class Detalleobjeto(LoginRequiredMixin,DetailView):
    model=Objeto
    template_name="objeto_detalle.html"
